@@ -1,0 +1,18 @@
+# Changes here will be overwritten by Copier
+_commit: 0.2.1
+_src_path: gh:pawamoy/copier-poetry
+author_email: mike@hackerdise.me
+author_fullname: Michael Ramsey
+author_username: mikeramsey
+copyright_date: '2021'
+copyright_holder: Michael Ramsey
+copyright_holder_email: mike@hackerdise.me
+copyright_license: MIT License
+project_description: DNS/Whois Domain Information library
+project_name: Wizard Domaininfo
+python_package_command_line_name: wizard-domaininfo
+python_package_distribution_name: wizard_domaininfo
+python_package_import_name: wizard_domaininfo
+repository_name: wizard-domaininfo
+repository_namespace: mikeramsey
+repository_provider: gitlab.com
