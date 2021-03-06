@@ -1,3 +1,7 @@
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
 [tool.poetry]
 name = "wizard_domaininfo"
 version = "0.1.0"
@@ -15,12 +19,20 @@ include = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.6"
+python = ">=3.6,<3.7"
 setuptools = "^54.1.0"
 wheel = "^0.36.2"
 aiodns = "^2.0.0"
 requests = "^2.25.1"
 tomlkit = "^0.7.0"
+atomicwrites = "^1.4.0"
+cached-property = "^1.5.2"
+contextvars = "^2.4"
+immutables = "^0.15"
+importlib-metadata = "^3.7.0"
+typing = "^3.7.4"
+zipp = "^3.4.1"
+dataclasses = "^0.8"
 
 [tool.poetry.dev-dependencies]
 autoflake = "^1.4"
@@ -50,6 +62,7 @@ pytest-sugar = "^0.9.4"
 pytest-xdist = "^2.2.0"
 toml = "^0.10.2"
 wemake-python-styleguide = "^0.14.1"
+safety = "^1.10.3"
 
 [tool.poetry.scripts]
 wizard-domaininfo = "wizard_domaininfo.cli:main"
@@ -123,6 +136,3 @@ exclude = ["tests/fixtures"]
     "-WPS433",  # redundant with C0415 (not top-level import)
     "-WPS529",  # implicit dict.get usage (generally false-positive)
 ]
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
