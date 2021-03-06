@@ -1,0 +1,61 @@
+variables:
+    PIP_CACHE_DIR: "${CI_PROJECT_DIR}/.cache/pip"
+    POETRY_VIRTUALENVS_IN_PROJECT: "true"
+
+cache:
+  key: "${CI_JOB_NAME}"
+  paths:
+    - .cache/pip
+    - .venv
+
+stages:
+  - quality
+  - tests
+
+.install-deps-template: &install-deps
+  before_script:
+    - pip install poetry
+    - poetry --version
+    - poetry install -vv
+
+# Quality jobs
+
+.quality-template: &quality
+  <<: *install-deps
+  image: python:3.6
+  stage: quality
+
+check-docs:
+  <<: *quality
+  script: poetry run duty check-docs
+
+check-code-quality:
+  <<: *quality
+  script: poetry run duty check-code-quality
+
+check-types:
+  <<: *quality
+  script: poetry run duty check-types
+
+check-dependencies:
+  <<: *quality
+  script: poetry run duty check-dependencies
+
+# Tests jobs
+
+.test-template: &test
+  <<: *install-deps
+  stage: tests
+  script: poetry run duty test
+
+python3.6:
+  <<: *test
+  image: python:3.6
+
+python3.7:
+  <<: *test
+  image: python:3.7
+
+python3.8:
+  <<: *test
+  image: python:3.8

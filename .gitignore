@@ -1,7 +1,48 @@
-.gitignore*.pyc
-__pycache__
-build
-dist
-*.egg-info
-.tox
-.DS_Store
+*.iws
+*.iml
+modules.xml
+.idea/misc.xml
+.idea/*
+
+/stats.txt
+venv/
+/target/
+/src/main/icons/linux/Thumbs.db
+/src/main/icons/base/Thumbs.db
+/src/main/icons/mac/Thumbs.db
+*/Thumbs.db
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+.hypothesis/
+
+.idea/
+__pycache__/
+*.py[cod]
+dist/
+*.egg-info/
+build/
+.coverage*
+pip-wheel-metadata/
+.pytest_cache/
+.mypy_cache/
+site/
+poetry.lock
+.venv/
