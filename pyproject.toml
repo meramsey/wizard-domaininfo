@@ -84,8 +84,12 @@ include_trailing_comma = true
 [tool.flakehell]
 format = "colored"
 max_line_length = 132
-show_source = false
+show_source = true
 exclude = ["tests/fixtures"]
+
+[tool.flakehell.exceptions."tests/"]
+flake8-docstrings = ["-*"]
+pycodestyle = ["-*"]
 
 [tool.flakehell.plugins]
 "*" = [
