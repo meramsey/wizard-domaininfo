@@ -25,9 +25,9 @@ stages:
   image: python:3.6
   stage: quality
 
-check-docs:
-  <<: *quality
-  script: poetry run duty check-docs
+#check-docs:
+#  <<: *quality
+#  script: poetry run duty check-docs
 
 check-code-quality:
   <<: *quality
