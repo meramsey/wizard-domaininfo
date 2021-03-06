@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
@@ -127,3 +128,25 @@ exclude = ["tests/fixtures"]
     "-WPS433",  # redundant with C0415 (not top-level import)
     "-WPS529",  # implicit dict.get usage (generally false-positive)
 ]
+=======
+[tool.poetry]
+name = "wizard_domaininfo"
+version = "0.1.0"
+description = ""
+authors = ["Michael Ramsey <mike@hackerdise.me>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+setuptools = "^54.1.0"
+wheel = "^0.36.2"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.0"
+pytest-cov = "^2.11.1"
+pytest-xdist = "^2.2.1"
+black = {version = "^20.8b1", allow-prereleases = true}
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+>>>>>>> b1b7ca3d1258efd0456dc46f62cb6cdddb45b060
