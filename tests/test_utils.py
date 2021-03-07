@@ -21,3 +21,36 @@ def test_check_url_ssl():
 def test_check_url_ssl_false():
     """Basic HTTPS test false."""
     assert not (utils.check_url_ssl("https://expired.badssl.com/")), "Should be False as this is a known expired SSL."
+
+
+def test_get_rdns_from_ip():
+    """Basic get RDNS via PTR lookup"""
+    assert utils.get_rdns_from_ip("8.8.8.8") == "dns.google", "Should return dns.google as this is the correct value"
+    assert not utils.get_rdns_from_ip("8.8.8.8") == "one.one.one.one", "Should not return one.one.one.one"
+
+
+def test_get_hostname_from_ip():
+    """Basic get RDNS via gethostbyaddr"""
+    assert utils.get_hostname_from_ip("1.1.1.1") == "one.one.one.one", "Should return one.one.one.one"
+    assert not utils.get_hostname_from_ip("1.1.1.1") == "dns.google", "Should not return dns.google"
+
+
+def test_get_domain_whois_info_legacy():
+    assert utils.get_domain_whois_info_legacy("google.com.au"), "Should return True"
+
+
+def test_get_domain_whois_expiration_date_legacy():
+    assert (
+        utils.get_domain_whois_expiration_date_legacy("google.com") == "2028-09-14 04:00:00"
+    ), "Should return 2028-09-14 04:00:00"
+
+
+def test_get_domain_rdap_info():
+    assert utils.get_domain_rdap_info("google.com")["ldhName"] == "GOOGLE.COM", "Should return GOOGLE.COM"
+    assert not utils.get_domain_rdap_info("facebook"), "Should return False as not valid domain"
+
+
+def test_get_domain_whois_event_date_rdap():
+    assert (
+        utils.get_domain_whois_event_date_rdap("google.com", "registration") == "1997-09-15 04:00:00"
+    ), "Should Return: 1997-09-15 04:00:00"
