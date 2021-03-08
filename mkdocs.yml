@@ -1,7 +1,7 @@
 site_name: "Wizard Domaininfo"
 site_description: "DNS/Whois Domain Information library"
-site_url: "https://mikeramsey.github.io/wizard-domaininfo"
-repo_url: "https://github.com/mikeramsey/wizard-domaininfo"
+site_url: "https://mikeramsey.gitlab.io/wizard-domaininfo"
+repo_url: "https://gitlab.com/mikeramsey/wizard-domaininfo"
 repo_name: "mikeramsey/wizard-domaininfo"
 
 nav:
