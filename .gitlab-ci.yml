@@ -42,9 +42,6 @@ python3.9:
   <<: *test
   image: python:3.9
 
-after_script:
-    - bash <(curl -s https://codecov.io/bash)
-
 
 # Quality jobs
 
@@ -55,7 +52,10 @@ after_script:
 
 check-docs:
   <<: *quality
-  script: poetry run duty check-docs
+  script:
+    - poetry run duty test
+    - poetry run coverage
+    - poetry run duty check-docs
 
 #check-code-quality:
 #  <<: *quality
@@ -72,10 +72,13 @@ check-dependencies:
 pages:
   stage: quality
   script:
-    - mkdocs build
-    - mv site public
+    - mkdocs build -s --site-dir public
+#    - mv site public
   artifacts:
     paths:
     - public
   only:
   - master
+
+after_script:
+    - bash <(curl -s https://codecov.io/bash)

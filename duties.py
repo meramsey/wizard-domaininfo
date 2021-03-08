@@ -19,6 +19,16 @@ CI = os.environ.get("CI", "0") in {"1", "true", "yes", ""}
 WINDOWS = os.name == "nt"
 PTY = not WINDOWS and not CI
 
+# Detect which CI were using so we can adjust things as needed for mkdocs from site to public for Gitlab Pages
+# https://docs.gitlab.com/ee/ci/variables/predefined_variables.html
+# Available for all jobs executed in CI/CD. true when available.
+GITLAB_CI = os.environ.get("GITLAB_CI")
+
+# https://docs.github.com/en/actions/reference/environment-variables Always set to true when GitHub Actions is
+# running the workflow. You can use this variable to differentiate when tests are being run locally or by GitHub
+# Actions.
+GITHUB_CI = os.environ.get("GITHUB_ACTIONS")
+
 
 def latest(lines: List[str], regex: Pattern) -> Optional[str]:
     """
@@ -196,6 +206,9 @@ def check_docs(ctx):
     Arguments:
         ctx: The context instance (passed automatically).
     """
+    # Here we are forcing coverage to be generated so we ensure this doesn't fail due to
+    # test(ctx)
+    # coverage(ctx)
     ctx.run("mkdocs build -s", title="Building documentation", pty=PTY)
 
 
@@ -221,6 +234,7 @@ def clean(ctx):
     ctx.run("rm -rf .coverage*")
     ctx.run("rm -rf .mypy_cache")
     ctx.run("rm -rf .pytest_cache")
+    ctx.run("rm -rf tests/.pytest_cache")
     ctx.run("rm -rf build")
     ctx.run("rm -rf dist")
     ctx.run("rm -rf pip-wheel-metadata")
@@ -265,6 +279,17 @@ def docs_deploy(ctx):
 
 
 @duty
+def docs_deploy_gitlab(ctx):
+    """
+    Deploy the documentation on Gitlab Pages.
+
+    Arguments:
+        ctx: The context instance (passed automatically).
+    """
+    ctx.run("mkdocs build -s --site-dir public", title="Deploying documentation")
+
+
+@duty
 def format(ctx):  # noqa: W0622 (we don't mind shadowing the format builtin)
     """
     Run formatting tools on the code.
@@ -299,7 +324,10 @@ def release(ctx, version):
         ctx.run("git push --tags", title="Pushing tags", pty=False)
         ctx.run("poetry build", title="Building dist/wheel", pty=PTY)
         ctx.run("poetry publish", title="Publishing version", pty=PTY)
-        ctx.run("mkdocs gh-deploy", title="Deploying documentation", pty=PTY)
+        if GITHUB_CI:
+            ctx.run("mkdocs gh-deploy", title="Deploying documentation", pty=PTY)
+        elif GITLAB_CI:
+            ctx.run("mkdocs build -s", title="Deploying documentation", pty=PTY)
 
 
 @duty(silent=True)
