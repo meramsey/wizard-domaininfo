@@ -42,6 +42,10 @@ python3.9:
   <<: *test
   image: python:3.9
 
+after_script:
+    - bash <(curl -s https://codecov.io/bash)
+
+
 # Quality jobs
 
 .quality-template: &quality
@@ -49,9 +53,9 @@ python3.9:
   image: python:3.6
   stage: quality
 
-#check-docs:
-#  <<: *quality
-#  script: poetry run duty check-docs
+check-docs:
+  <<: *quality
+  script: poetry run duty check-docs
 
 #check-code-quality:
 #  <<: *quality
@@ -64,3 +68,5 @@ check-types:
 check-dependencies:
   <<: *quality
   script: poetry run duty check-dependencies
+
+
