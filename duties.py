@@ -239,6 +239,7 @@ def clean(ctx):
     ctx.run("rm -rf dist")
     ctx.run("rm -rf pip-wheel-metadata")
     ctx.run("rm -rf site")
+    ctx.run("rm -rf public")
     ctx.run("find . -type d -name __pycache__ | xargs rm -rf")
     ctx.run("find . -name '*.rej' -delete")
 
