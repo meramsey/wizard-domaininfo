@@ -11,6 +11,7 @@ cache:
 stages:
   - tests
   - quality
+  - deploy
 
 .install-deps-template: &install-deps
   before_script:
@@ -70,10 +71,16 @@ check-dependencies:
   script: poetry run duty check-dependencies
 
 pages:
-  stage: quality
+  stage: deploy
+  image: python:3.6
+  before_script:
+    - pip install poetry
+    - poetry --version
+    - poetry install -vv
   script:
+    - poetry run duty test
+    - poetry run coverage
     - mkdocs build -s --site-dir public
-#    - mv site public
   artifacts:
     paths:
     - public
