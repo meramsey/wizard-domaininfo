@@ -327,7 +327,7 @@ def release(ctx, version):
         if GITHUB_CI:
             ctx.run("mkdocs gh-deploy", title="Deploying documentation", pty=PTY)
         elif GITLAB_CI:
-            ctx.run("mkdocs build -s", title="Deploying documentation", pty=PTY)
+            ctx.run("mkdocs build -s --site-dir public", title="Deploying documentation")
 
 
 @duty(silent=True)
