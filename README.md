@@ -2,7 +2,7 @@
 
 [![pipeline status](https://gitlab.com/mikeramsey/wizard-domaininfo/badges/master/pipeline.svg)](https://gitlab.com/mikeramsey/wizard-domaininfo/pipelines)
 [![coverage report](https://gitlab.com/mikeramsey/wizard-domaininfo/badges/master/coverage.svg)](https://gitlab.com/mikeramsey/wizard-domaininfo/commits/master)
-[![documentation](https://img.shields.io/badge/docs-mkdocs%20material-blue.svg?style=flat)](https://mikeramsey.github.io/wizard-domaininfo/)
+[![documentation](https://img.shields.io/badge/docs-mkdocs%20material-blue.svg?style=flat)](https://mikeramsey.gitlab.io/wizard-domaininfo/)
 [![pypi version](https://img.shields.io/pypi/v/wizard-domaininfo.svg)](https://pypi.org/project/wizard-domaininfo/)
 [![gitter](https://badges.gitter.im/join%20chat.svg)](https://gitter.im/wizard-domaininfo/community)
 
