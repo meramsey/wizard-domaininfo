@@ -18,3 +18,11 @@ repos:
     hooks:
     -   id: mypy
         exclude: ^(docs/|example-plugin/|tests/fixtures)
+-   repo: local
+    hooks:
+      - id: pytest
+        name: Check pytest unit tests pass
+        entry: poetry run duty test
+        pass_filenames: false
+        language: system
+        types: [python]

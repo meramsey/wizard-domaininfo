@@ -65,6 +65,8 @@ def check_http_reachable(domain_name):
     try:
         if "http" not in domain_name:
             url = "http://" + domain_name
+        else:
+            url = domain_name
         http.get(url)
         return True
     except requests.exceptions.ConnectionError:
@@ -197,10 +199,13 @@ def get_domain_whois_event_date_rdap(domain, event_action):
     :rtype: str
     """
     domain_whois = get_domain_rdap_info(domain)
-    for event in domain_whois["events"]:
-        # print(event["eventAction"], event["eventDate"])
-        if event["eventAction"] == event_action:
-            return event["eventDate"].replace("T", " ").replace("Z", "")
+    if domain_whois:
+        for event in domain_whois["events"]:
+            # print(event["eventAction"], event["eventDate"])
+            if event["eventAction"] == event_action:
+                return event["eventDate"].replace("T", " ").replace("Z", "")
+    else:
+        return False
 
 
 def get_domain_whois_expiration_date_rdap(domain):
