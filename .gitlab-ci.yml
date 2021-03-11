@@ -72,8 +72,8 @@ check-dependencies:
 
 pages:
   stage: deploy
-  <<: *quality
-  image: python:3.8
+  <<: *install-deps
+  image: python:3.6
   script:
   - poetry run duty test
   - poetry run duty coverage
