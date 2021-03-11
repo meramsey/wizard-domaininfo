@@ -79,11 +79,8 @@ check-dependencies:
 
 pages:
   stage: deploy
+  <<: *test
   image: python:3.8
-  before_script:
-    - pip install poetry
-    - poetry --version
-    - poetry install -vv
   script:
    - poetry run duty docs
   artifacts:
