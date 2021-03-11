@@ -44,7 +44,7 @@ python3.8:
   coverage: '/^TOTAL.+?(\d+\.\d+\%)$/'
   artifacts:
     paths:
-      - build/coverage
+      - build/
 
 python3.9:
   <<: *test
@@ -79,7 +79,7 @@ check-dependencies:
 
 pages:
   stage: deploy
-  <<: *test
+  <<: *quality
   image: python:3.8
   script:
    - poetry run duty docs
