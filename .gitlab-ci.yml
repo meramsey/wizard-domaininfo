@@ -39,6 +39,7 @@ python3.8:
   <<: *test
   image: python:3.8
   script:
+    - poetry run duty test
     - poetry run duty coverage
   coverage: '/^TOTAL.+?(\d+\.\d+\%)$/'
   artifacts:
