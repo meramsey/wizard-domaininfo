@@ -11,12 +11,12 @@ from requests.adapters import HTTPAdapter
 # https://findwork.dev/blog/advanced-usage-python-requests-timeouts-retries-hooks/
 class TimeoutHTTPAdapter(HTTPAdapter):
     def __init__(self, *args, **kwargs):
-        """The HTTPAdapter is comparable we can combine retries and timeouts.
+        """
+        The HTTPAdapter class combines retries and timeouts for the requests library.
 
-        :param *args: args
-        :type *args: mixed
-        :param **kwargs: Some kwargs
-        :type **kwargs: mixed
+        Args:
+            *args ():
+            **kwargs ():
         """
         DEFAULT_TIMEOUT = 1
         self.timeout = DEFAULT_TIMEOUT

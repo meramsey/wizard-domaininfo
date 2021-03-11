@@ -14,7 +14,6 @@ BASIC_DUTIES = \
 	clean \
 	coverage \
 	docs \
-	docs-deploy \
 	docs-regen \
 	docs-serve \
 	format \

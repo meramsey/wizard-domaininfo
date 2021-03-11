@@ -5,20 +5,45 @@ variables:
 cache:
   key: "${CI_JOB_NAME}"
   paths:
-    - .cache/pip
-    - .venv
+  - .cache/pip
+  - .venv
 
 stages:
-  - tests
-  - quality
-  - deploy
+- quality
+- tests
+- deploy
 
 .install-deps-template: &install-deps
   before_script:
-    - pip install poetry
-    - poetry --version
-    - poetry install -vv
+  - pip install poetry
+  - poetry --version
+  - poetry install -vv
 
+# Quality jobs
+
+.quality-template: &quality
+  <<: *install-deps
+  image: python:3.8
+  stage: quality
+
+check-docs:
+  <<: *quality
+  script:
+  - mkdir -p build/coverage
+  - touch build/coverage/index.html
+  - poetry run duty check-docs
+
+#check-code-quality:
+#  <<: *quality
+#  script: poetry run duty check-code-quality
+
+check-types:
+  <<: *quality
+  script: poetry run duty check-types
+
+check-dependencies:
+  <<: *quality
+  script: poetry run duty check-dependencies
 
 # Tests jobs
 
@@ -26,6 +51,9 @@ stages:
   <<: *install-deps
   stage: tests
   script: poetry run duty test
+  artifacts:
+    paths:
+    - .coverage-*
 
 python3.6:
   <<: *test
@@ -44,38 +72,16 @@ python3.9:
   image: python:3.9
 
 
-# Quality jobs
-
-.quality-template: &quality
-  <<: *install-deps
-  image: python:3.6
-  stage: quality
-
-check-docs:
-  <<: *quality
-  script:
-    - mkdir -p build/coverage
-    - touch build/coverage/index.html
-    - poetry run duty check-docs
-
-#check-code-quality:
-#  <<: *quality
-#  script: poetry run duty check-code-quality
-
-check-types:
-  <<: *quality
-  script: poetry run duty check-types
-
-check-dependencies:
-  <<: *quality
-  script: poetry run duty check-dependencies
-
 pages:
   stage: deploy
   <<: *install-deps
-  image: python:3.6
+  image: python:3.8
+  dependencies:
+  - python3.6
+  - python3.7
+  - python3.8
+  - python3.9
   script:
-  - poetry run duty test
   - poetry run duty coverage
   - poetry run duty docs
   coverage: '/^TOTAL.+?(\d+\.\d+\%)$/'
