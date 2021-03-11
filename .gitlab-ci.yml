@@ -23,7 +23,7 @@ stages:
 
 .quality-template: &quality
   <<: *install-deps
-  image: python:3.8
+  image: python:3.6
   stage: quality
 
 check-docs:
