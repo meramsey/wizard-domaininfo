@@ -3,7 +3,7 @@ site_description: "DNS/Whois Domain Information library"
 site_url: "https://mikeramsey.gitlab.io/wizard-domaininfo"
 repo_url: "https://gitlab.com/mikeramsey/wizard-domaininfo"
 repo_name: "mikeramsey/wizard-domaininfo"
-
+site_dir: "public"
 nav:
 - Home:
   - Overview: index.md
