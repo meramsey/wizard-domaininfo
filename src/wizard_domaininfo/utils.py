@@ -7,6 +7,8 @@ from requests.exceptions import Timeout, ConnectionError
 from requests.packages.urllib3.util.retry import Retry
 from requests.adapters import HTTPAdapter
 
+from dateutil.parser import parse
+
 
 # https://findwork.dev/blog/advanced-usage-python-requests-timeouts-retries-hooks/
 class TimeoutHTTPAdapter(HTTPAdapter):
@@ -50,6 +52,7 @@ http.mount("http://", TimeoutHTTPAdapter(max_retries=retries))
 
 TIMEOUT = 1.0  # timeout in seconds
 rdapbootstrapurl = "https://www.rdap.net/"
+url = ''
 
 wizard_whois.net.socket.setdefaulttimeout(TIMEOUT)
 
@@ -62,6 +65,7 @@ def check_http_reachable(domain_name):
     :return: Returns `True` if connectable, `False` otherwise
     :rtype: bool
     """
+    global url
     try:
         if "http" not in domain_name:
             url = "http://" + domain_name
@@ -82,6 +86,7 @@ def check_url_ssl(domain_name):
     :return: Returns `True` if valid, `False` otherwise
     :rtype: bool
     """
+    global url
     try:
         if "http" not in domain_name:
             url = "https://" + domain_name
@@ -203,7 +208,10 @@ def get_domain_whois_event_date_rdap(domain, event_action):
         for event in domain_whois["events"]:
             # print(event["eventAction"], event["eventDate"])
             if event["eventAction"] == event_action:
-                return event["eventDate"].replace("T", " ").replace("Z", "")
+                get_date_obj = parse(event["eventDate"])
+                # print(get_date_obj.strftime('%Y-%m-%d %H:%M:%S'))
+                # return event["eventDate"].replace("T", " ").replace("Z", "")
+                return str(get_date_obj.strftime('%Y-%m-%d %H:%M:%S'))
     else:
         return False
 
@@ -236,6 +244,7 @@ def get_domain_whois_registration_date_rdap(domain):
 # print(get_domain_whois_expiration_date_legacy("google.com"))
 # print(get_domain_rdap_info("google.com"))
 # print(get_domain_whois_registration_date_rdap("google.com"))
-# print(get_domain_whois_expiration_date_rdap("google.com"))
+# print(get_domain_whois_expiration_date_rdap("wizardassistant.com"))
+# print(get_domain_whois_expiration_date_rdap("wizardassistant.app"))
 # print(get_domain_whois_event_date_rdap("google.com", "expiration"))
 # print(get_domain_whois_event_date_rdap("google.com", "registration"))
