@@ -1,5 +1,10 @@
 from __future__ import print_function
-import re, sys, datetime, csv, pkgutil
+import csv
+import datetime
+import pkgutil
+import re
+import sys
+
 from wizard_whois import shared, net
 
 try:

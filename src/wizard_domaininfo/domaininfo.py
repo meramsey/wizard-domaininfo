@@ -308,7 +308,7 @@ class DomainInfo:
 
                 },
                 'DNS': {
-                    'SOA': self.soa,
+                    'SOA': self.soa['SOA'],
                     'NS': self.domain_nameservers,
                     'WWW': self.domain_www,
                     'MX': self.domain_mx,
@@ -337,7 +337,7 @@ class DomainInfo:
 
 # How to use
 def check_domaininfo():
-    domain = DomainInfo('a2hosting.com')
+    domain = DomainInfo('wizardassistant.com')
     print(f"{domain.domain}'s is expired {domain.expired} ")
     print(f"{domain.domain}'s registrar is {domain.registrar} ")
     print(f"Whois Nameservers: {domain.whois_nameservers} ")
