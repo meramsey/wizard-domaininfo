@@ -151,12 +151,12 @@ All commands are relative to the root directory of the repository.
 
 Make sure to verify (using `pwhois` or otherwise) that the WHOIS data for the domain is being parsed correctly, before marking it as correct!
 
-	python tests/test_parse.py update thedomain.com
+	python test_parse.py update thedomain.com
 	
 ### Running all tests
 
-	python tests/test_parse.py run all
+	python test_parse.py run all
 	
 ### Testing a specific domain
 
-	python tests/test_parse.py run thedomain.com
+	python test_parse.py run thedomain.com
