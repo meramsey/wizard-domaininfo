@@ -1,6 +1,6 @@
 """Tests for the `utils` module."""
 
-from wizard_domaininfo import utils
+from wizard_domaininfo import utils, net, get_whois, whois
 
 
 def test_check_http_reachable():
@@ -45,7 +45,7 @@ def test_get_domain_whois_info_legacy():
 
 def test_get_domain_whois_expiration_date_legacy():
     assert (
-        utils.get_domain_whois_expiration_date_legacy("google.com") == "2028-09-14 04:00:00"
+            utils.get_domain_whois_expiration_date_legacy("google.com") == "2028-09-14 04:00:00"
     ), "Should return 2028-09-14 04:00:00"
     assert not utils.get_domain_whois_expiration_date_legacy("google.invalid"), "Should return False"
 
@@ -57,18 +57,22 @@ def test_get_domain_rdap_info():
 
 def test_get_domain_whois_event_date_rdap():
     assert (
-        utils.get_domain_whois_event_date_rdap("google.com", "registration") == "1997-09-15 04:00:00"
+            utils.get_domain_whois_event_date_rdap("google.com", "registration") == "1997-09-15 04:00:00"
     ), "Should Return: 1997-09-15 04:00:00"
     assert not utils.get_domain_whois_event_date_rdap("google.invalid", "registration"), "Should Return: False"
 
 
 def test_get_domain_whois_expiration_date_rdap():
     assert (
-        utils.get_domain_whois_expiration_date_rdap("google.com") == "2028-09-14 04:00:00"
+            utils.get_domain_whois_expiration_date_rdap("google.com") == "2028-09-14 04:00:00"
     ), "Should return 2028-09-14 04:00:00"
 
 
 def test_get_domain_whois_registration_date_rdap():
     assert (
-        utils.get_domain_whois_registration_date_rdap("google.com") == "1997-09-15 04:00:00"
+            utils.get_domain_whois_registration_date_rdap("google.com") == "1997-09-15 04:00:00"
     ), "Should Return: 1997-09-15 04:00:00"
+
+
+def test_get_a_record():
+    pass
