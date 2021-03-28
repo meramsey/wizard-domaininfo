@@ -13,6 +13,7 @@ nav:
 - Code Reference:
   - cli.py: reference/cli.md
   - utils.py: reference/utils.md
+  - domaininfo.py: reference/domaininfo.md
 - Development:
   - Contributing: contributing.md
   - Code of Conduct: code_of_conduct.md

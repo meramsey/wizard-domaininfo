@@ -197,9 +197,8 @@ def check_docs(ctx):
     Arguments:
         ctx: The context instance (passed automatically).
     """
-    # Here we are forcing coverage to be generated so we ensure this doesn't fail due to
-    # test(ctx)
-    # coverage(ctx)
+    Path("build/coverage").mkdir(parents=True, exist_ok=True)
+    Path("build/coverage/index.html").touch(exist_ok=True)
     ctx.run("mkdocs build -s", title="Building documentation", pty=PTY)
 
 
