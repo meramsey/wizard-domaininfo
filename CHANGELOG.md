@@ -5,6 +5,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.2.3](https://gitlab.com/mikeramsey/wizard-domaininfo/tags/0.2.3) - 2021-03-28
+
+<small>[Compare with 0.2.2](https://gitlab.com/mikeramsey/wizard-domaininfo/compare/0.2.2...0.2.3)</small>
+
+### Bug Fixes
+- fixed asyncio eventloop missing after automated fixes changed it ([531f0e1](https://gitlab.com/mikeramsey/wizard-domaininfo/commit/531f0e12d49c233dcda1e15415012b7439f3711b) by Michael Ramsey).
+- check types incompatible with legacy third party pwhois ([fb3d251](https://gitlab.com/mikeramsey/wizard-domaininfo/commit/fb3d2517c83afdef21d9453fa2beb98858c5f6ee) by Michael Ramsey).
+
+
 ## [0.2.2](https://gitlab.com/mikeramsey/wizard-domaininfo/tags/0.2.2) - 2021-03-28
 
 <small>[Compare with 0.2.1](https://gitlab.com/mikeramsey/wizard-domaininfo/compare/0.2.1...0.2.2)</small>
