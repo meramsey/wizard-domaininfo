@@ -5,7 +5,7 @@ import pkgutil
 import re
 import sys
 
-from wizard_whois import shared, net
+from wizard_domaininfo import shared, net
 
 try:
     from io import StringIO
@@ -14,7 +14,7 @@ except ImportError:
 
 
 def pkgdata(name):
-    data = pkgutil.get_data("wizard_whois", name)
+    data = pkgutil.get_data("wizard_domaininfo", name)
     if sys.version_info < (3, 0):
         return data
     else:

@@ -11,7 +11,7 @@ license = "MIT License"
 readme = "README.md"
 repository = "https://gitlab.com/mikeramsey/wizard-domaininfo"
 homepage = "https://gitlab.com/mikeramsey/wizard-domaininfo"
-keywords = []
+keywords = ['whois', 'nic', 'domain', 'dns', 'rdap']
 packages = [ { include = "wizard_domaininfo", from = "src" } ]
 include = [
     "README.md",
@@ -80,6 +80,7 @@ mkdocstrings = "^0.15.0"
 
 [tool.poetry.scripts]
 wizard-domaininfo = "wizard_domaininfo.cli:main"
+pwhois = "wizard_domaininfo.pwhois"
 
 [tool.black]
 line-length = 120

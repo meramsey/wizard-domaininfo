@@ -5,6 +5,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.2.2](https://gitlab.com/mikeramsey/wizard-domaininfo/tags/0.2.2) - 2021-03-28
+
+<small>[Compare with 0.2.1](https://gitlab.com/mikeramsey/wizard-domaininfo/compare/0.2.1...0.2.2)</small>
+
+### Bug Fixes
+- fixed asyncio issue with dnslookups when threaded without existing eventloop ([f1349fd](https://gitlab.com/mikeramsey/wizard-domaininfo/commit/f1349fd849805e3570f6319dbeae10d343ef0736) by Michael Ramsey).
+
+
 ## [0.2.1](https://gitlab.com/mikeramsey/wizard-domaininfo/tags/0.2.1) - 2021-03-28
 
 <small>[Compare with 0.2.0](https://gitlab.com/mikeramsey/wizard-domaininfo/compare/0.2.0...0.2.1)</small>

@@ -3,7 +3,7 @@ import socket
 import sys
 from codecs import encode, decode
 
-from wizard_whois import shared
+from wizard_domaininfo import shared
 
 
 def get_whois_raw(domain, server="", previous=None, rfc3490=True, never_cut=False, with_server_list=False, server_list=None):
