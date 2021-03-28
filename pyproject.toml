@@ -32,7 +32,6 @@ immutables = "^0.15"
 importlib-metadata = "^3.7.0"
 typing = "^3.7.4"
 zipp = "^3.4.1"
-wizard-whois = "^2.5.9"
 python-dateutil = "^2.8.1"
 
 [tool.poetry.dev-dependencies]
@@ -80,7 +79,7 @@ mkdocstrings = "^0.15.0"
 
 [tool.poetry.scripts]
 wizard-domaininfo = "wizard_domaininfo.cli:main"
-pwhois = "wizard_domaininfo.pwhois"
+pwhois = "wizard_domaininfo:pwhois"
 
 [tool.black]
 line-length = 120

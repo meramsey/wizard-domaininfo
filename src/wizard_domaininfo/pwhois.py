@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import argparse
 import datetime
 import json
@@ -40,11 +39,11 @@ else:
         data = f.read().split("\n--\n")
 
 if args.raw:
-    print("\n--\n".join([x.encode("utf-8") for x in data]))
+    print(b"\n--\n".join([x.encode("utf-8") for x in data]))
 else:
     if len(server_list) > 0:
         parsed = wizard_domaininfo.parse.parse_raw_whois(data, normalized=True, never_query_handles=False,
-                                                    handle_server=server_list[-1])
+                                                         handle_server=server_list[-1])
     else:
         parsed = wizard_domaininfo.parse.parse_raw_whois(data, normalized=True)
 
