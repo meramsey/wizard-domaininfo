@@ -68,9 +68,9 @@ class DomainInfo:
         # DNSSEC aka SecureDNS status of domain
         self.dnssec = ''
         # Setup asyncio
-        # self.loop = asyncio.get_event_loop()
         # Needed due to running this in another thread without a previous event loop
-        # self.loop = asyncio.set_event_loop(asyncio.new_event_loop())
+        asyncio.set_event_loop(asyncio.new_event_loop())
+        self.loop = asyncio.get_event_loop()
         self.resolver = aiodns.DNSResolver(loop=self.loop)
         self.custom_resolvers = []
         self.resolver.nameservers = self.default_resolvers
