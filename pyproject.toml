@@ -4,7 +4,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "wizard_domaininfo"
-version = "0.2.3"
+version = "0.2.4"
 description = "DNS/Whois Domain Information library"
 authors = ["Michael Ramsey <mike@hackerdise.me>"]
 license = "MIT License"
@@ -20,11 +20,9 @@ include = [
 
 [tool.poetry.dependencies]
 python = "^3.6.1"
-setuptools = "^54.1.0"
-wheel = "^0.36.2"
 aiodns = "^2.0.0"
 requests = "^2.25.1"
-tomlkit = "^0.7.0"
+python-dateutil = "^2.8.1"
 atomicwrites = "^1.4.0"
 cached-property = "^1.5.2"
 contextvars = "^2.4"
@@ -32,7 +30,7 @@ immutables = "^0.15"
 importlib-metadata = "^3.7.0"
 typing = "^3.7.4"
 zipp = "^3.4.1"
-python-dateutil = "^2.8.1"
+
 
 [tool.poetry.dev-dependencies]
 # formatting, quality, tests
@@ -76,6 +74,11 @@ mkdocs-coverage = "^0.2.1"
 mkdocs-macros-plugin = "^0.5.0"
 mkdocs-material = "^6.2.7"
 mkdocstrings = "^0.15.0"
+
+#build
+setuptools = "^54.1.0"
+wheel = "^0.36.2"
+tomlkit = "^0.7.0"
 
 [tool.poetry.scripts]
 wizard-domaininfo = "wizard_domaininfo.cli:main"
