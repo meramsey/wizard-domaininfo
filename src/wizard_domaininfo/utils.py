@@ -57,6 +57,16 @@ url = ''
 wizard_whois.socket.setdefaulttimeout(TIMEOUT)
 
 
+def get_or_create_eventloop():
+    try:
+        return asyncio.get_event_loop()
+    except RuntimeError as ex:
+        if "There is no current event loop in thread" in str(ex):
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+            return asyncio.get_event_loop()
+
+
 def parse_date_convert(date, fmt=None):
     """Parse date from string and convert to desired format.
 
@@ -519,7 +529,6 @@ def check_domain_expired(expiration_date, fmt=None):
     except:
         return True
         pass
-
 
 # print(get_mx_records("wizardassistant.com"))
 # print(check_domain_expired('2028-09-14 04:00:00'))

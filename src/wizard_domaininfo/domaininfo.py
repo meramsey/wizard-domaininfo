@@ -7,7 +7,8 @@ from collections import defaultdict
 import wizard_domaininfo
 from wizard_domaininfo.utils import get_dmarc_record, get_a_record, get_soa_record, get_aaaa_record, get_ns_records, \
     get_txt_records, get_hostname_from_ip, get_rdns_from_ip, get_domain_rdap_info, get_domain_whois_info_legacy, \
-    parse_date_convert, get_dkim_records, check_domain_expired, get_cname_record, get_mx_records
+    parse_date_convert, get_dkim_records, check_domain_expired, get_cname_record, get_mx_records, \
+    get_or_create_eventloop
 
 TIMEOUT = 1.0  # timeout in seconds
 wizard_domaininfo.net.socket.setdefaulttimeout(TIMEOUT)
@@ -68,9 +69,7 @@ class DomainInfo:
         # DNSSEC aka SecureDNS status of domain
         self.dnssec = ''
         # Setup asyncio
-        # Needed due to running this in another thread without a previous event loop
-        asyncio.set_event_loop(asyncio.new_event_loop())
-        self.loop = asyncio.get_event_loop()
+        self.loop = get_or_create_eventloop()
         self.resolver = aiodns.DNSResolver(loop=self.loop)
         self.custom_resolvers = []
         self.resolver.nameservers = self.default_resolvers
@@ -367,4 +366,4 @@ def check_domaininfo():
 # elapsed_time = timeit.timeit(check_domaininfo, number=1)/1
 # print("DNS Lookup took: ", elapsed_time)
 
-# check_domaininfo()
+check_domaininfo()
