@@ -366,4 +366,4 @@ def check_domaininfo():
 # elapsed_time = timeit.timeit(check_domaininfo, number=1)/1
 # print("DNS Lookup took: ", elapsed_time)
 
-check_domaininfo()
+# check_domaininfo()
