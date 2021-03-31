@@ -5,6 +5,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.2.5](https://gitlab.com/mikeramsey/wizard-domaininfo/tags/0.2.5) - 2021-03-30
+
+<small>[Compare with 0.2.4](https://gitlab.com/mikeramsey/wizard-domaininfo/compare/0.2.4...0.2.5)</small>
+
+### Bug Fixes
+- commented out test line which was calling function uncessarily ([4899fba](https://gitlab.com/mikeramsey/wizard-domaininfo/commit/4899fbaf665eba2b23a50c2de9b6150b88d46f0e) by Michael Ramsey).
+
+
 ## [0.2.4](https://gitlab.com/mikeramsey/wizard-domaininfo/tags/0.2.4) - 2021-03-30
 
 <small>[Compare with 0.2.3](https://gitlab.com/mikeramsey/wizard-domaininfo/compare/0.2.3...0.2.4)</small>

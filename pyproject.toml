@@ -4,7 +4,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "wizard_domaininfo"
-version = "0.2.4"
+version = "0.2.5"
 description = "DNS/Whois Domain Information library"
 authors = ["Michael Ramsey <mike@hackerdise.me>"]
 license = "MIT License"
