@@ -9,8 +9,8 @@ description = "DNS/Whois Domain Information library"
 authors = ["Michael Ramsey <mike@hackerdise.me>"]
 license = "MIT License"
 readme = "README.md"
-repository = "https://gitlab.com/mikeramsey/wizard-domaininfo"
-homepage = "https://gitlab.com/mikeramsey/wizard-domaininfo"
+repository = "https://github.com/meramsey/wizard-domaininfo"
+homepage = "https://github.com/meramsey/wizard-domaininfo"
 keywords = ['whois', 'nic', 'domain', 'dns', 'rdap']
 packages = [ { include = "wizard_domaininfo", from = "src" } ]
 include = [
