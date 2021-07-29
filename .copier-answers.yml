@@ -15,4 +15,4 @@ python_package_distribution_name: wizard_domaininfo
 python_package_import_name: wizard_domaininfo
 repository_name: wizard-domaininfo
 repository_namespace: mikeramsey
-repository_provider: gitlab.com
+repository_provider: github.com
