@@ -5,25 +5,25 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
-## [0.2.5](https://gitlab.com/mikeramsey/wizard-domaininfo/tags/0.2.5) - 2021-03-30
+## [0.2.5](https://github.com/meramsey/wizard-domaininfo/releases/tag/0.2.5) - 2021-03-30
 
-<small>[Compare with 0.2.4](https://gitlab.com/mikeramsey/wizard-domaininfo/compare/0.2.4...0.2.5)</small>
+<small>[Compare with 0.2.4](https://github.com/meramsey/wizard-domaininfo/compare/0.2.4...0.2.5)</small>
 
 ### Bug Fixes
-- commented out test line which was calling function uncessarily ([4899fba](https://gitlab.com/mikeramsey/wizard-domaininfo/commit/4899fbaf665eba2b23a50c2de9b6150b88d46f0e) by Michael Ramsey).
+- commented out test line which was calling function unnecessarily ([4899fba](https://gitlab.com/mikeramsey/wizard-domaininfo/commit/4899fbaf665eba2b23a50c2de9b6150b88d46f0e) by Michael Ramsey).
 
 
-## [0.2.4](https://gitlab.com/mikeramsey/wizard-domaininfo/tags/0.2.4) - 2021-03-30
+## [0.2.4](https://github.com/meramsey/wizard-domaininfo/releases/tag/0.2.4) - 2021-03-30
 
-<small>[Compare with 0.2.3](https://gitlab.com/mikeramsey/wizard-domaininfo/compare/0.2.3...0.2.4)</small>
+<small>[Compare with 0.2.3](https://github.com/meramsey/wizard-domaininfo/compare/0.2.3...0.2.4)</small>
 
 ### Bug Fixes
 - fix asyncio event loops with new get or create new event loop function ([acc799b](https://gitlab.com/mikeramsey/wizard-domaininfo/commit/acc799b14d0ffe7d7008077881bcfb4d46448a65) by Michael Ramsey).
 
 
-## [0.2.3](https://gitlab.com/mikeramsey/wizard-domaininfo/tags/0.2.3) - 2021-03-28
+## [0.2.3](https://github.com/meramsey/wizard-domaininfo/tags/0.2.3) - 2021-03-28
 
-<small>[Compare with 0.2.2](https://gitlab.com/mikeramsey/wizard-domaininfo/compare/0.2.2...0.2.3)</small>
+<small>[Compare with 0.2.2](https://github.com/meramsey/wizard-domaininfo/compare/0.2.2...0.2.3)</small>
 
 ### Bug Fixes
 - fixed asyncio eventloop missing after automated fixes changed it ([531f0e1](https://gitlab.com/mikeramsey/wizard-domaininfo/commit/531f0e12d49c233dcda1e15415012b7439f3711b) by Michael Ramsey).

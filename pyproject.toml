@@ -31,6 +31,13 @@ importlib-metadata = "^3.7.0"
 typing = "^3.7.4"
 zipp = "^3.4.1"
 
+# A list of all of the optional dependencies, some of which are included in the
+# below `extras`. They can be opted into by apps.
+ipwhois = { version = "^1.2", optional = true }
+
+[tool.poetry.extras]
+mysql = ["ipwhois"]
+
 
 [tool.poetry.dev-dependencies]
 # formatting, quality, tests

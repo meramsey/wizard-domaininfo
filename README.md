@@ -57,7 +57,7 @@ None! All you need is the Python standard library. Optional RDAP WHOIS based loo
 ## Instructions
 
 The whois legacy manual HTML version is also viewable [here](http://cryto.net/pythonwhois).
-The new manual for RDAP based whois and DNS is located [here](https://mikeramsey.gitlab.io/wizard-domaininfo/).
+The new manual for RDAP based whois and DNS is located [here](https://github.com/meramsey/wizard-domaininfo/).
 ## Goals
 
 * 100% coverage of WHOIS/DNS formats.
@@ -96,7 +96,7 @@ The new manual for RDAP based whois and DNS is located [here](https://mikeramsey
 	* Check domain expiration.
 	* Check for or enumerate DKIM records and selectors.
 	* Check Whois Nameservers and DNS nameservers match.
-	* See [here](https://gitlab.com/mikeramsey/wizard-domaininfo/-/blob/master/src/wizard_domaininfo/domaininfo.py#L23-69) for all the class attributes.
+	* See [here](https://github.com/meramsey/wizard-domaininfo/blob/master/src/wizard_domaininfo/domaininfo.py#L23-L83) for all the class attributes.
 	
 
 ## Important update notes
