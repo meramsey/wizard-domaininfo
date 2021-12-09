@@ -44,7 +44,7 @@ pip-wheel-metadata/
 .pytest_cache/
 .mypy_cache/
 site/
-poetry.lock
+!poetry.lock
 .venv/
 .pytest_cache
 .mypy_cache

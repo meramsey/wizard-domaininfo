@@ -1,6 +1,6 @@
 # Wizard Domaininfo
 
-[![pipeline status](https://gitlab.com/mikeramsey/wizard-domaininfo/badges/master/pipeline.svg)](https://gitlab.com/mikeramsey/wizard-domaininfo/pipelines)
+[![ci](https://github.com/meramsey/wizard-domaininfo/actions/workflows/ci.yml/badge.svg)](https://github.com/meramsey/wizard-domaininfo/actions/workflows/ci.yml)
 [![coverage report](https://gitlab.com/mikeramsey/wizard-domaininfo/badges/master/coverage.svg)](https://gitlab.com/mikeramsey/wizard-domaininfo/commits/master)
 [![documentation](https://img.shields.io/badge/docs-mkdocs%20material-blue.svg?style=flat)](https://mikeramsey.gitlab.io/wizard-domaininfo/)
 [![pypi version](https://img.shields.io/pypi/v/wizard-domaininfo.svg)](https://pypi.org/project/wizard-domaininfo/)
