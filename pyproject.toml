@@ -20,23 +20,22 @@ include = [
 
 [tool.poetry.dependencies]
 python = "^3.6.1"
-aiodns = "^2.0.0"
-requests = "^2.25.1"
-python-dateutil = "^2.8.1"
+aiodns = "^3.0.0"
+requests = "^2.26.0"
+python-dateutil = "^2.8.2"
 atomicwrites = "^1.4.0"
 cached-property = "^1.5.2"
 contextvars = "^2.4"
-immutables = "^0.15"
-importlib-metadata = "^3.7.0"
-typing = "^3.7.4"
-zipp = "^3.4.1"
+immutables = "^0.16"
+importlib-metadata = "^4.8.2"
+zipp = "^3.6.0"
 
 # A list of all of the optional dependencies, some of which are included in the
 # below `extras`. They can be opted into by apps.
-ipwhois = { version = "^1.2", optional = true }
+ipwhois = "^1.2.0"
 
 [tool.poetry.extras]
-mysql = ["ipwhois"]
+ipwhois = ["ipwhois"]
 
 
 [tool.poetry.dev-dependencies]
