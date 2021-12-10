@@ -5,6 +5,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.2.6](https://github.com/meramsey/wizard-domaininfo/releases/tag/0.2.6) - 2021-12-09
+
+<small>[Compare with 0.2.5](https://github.com/meramsey/wizard-domaininfo/compare/0.2.5...0.2.6)</small>
+
+### Bug Fixes
+- ci issues ([ad2e3c4](https://github.com/meramsey/wizard-domaininfo/commit/ad2e3c47d029acb25d39d96b741d5bead4055a70) by Michael Ramsey).
+- updated gitignore to add poetry.lock file ([76d6258](https://github.com/meramsey/wizard-domaininfo/commit/76d6258a3cb1dece8ecc2fa239afc9c85768ee50) by Michael Ramsey).
+
+
 ## [0.2.5](https://github.com/meramsey/wizard-domaininfo/releases/tag/0.2.5) - 2021-03-30
 
 <small>[Compare with 0.2.4](https://github.com/meramsey/wizard-domaininfo/compare/0.2.4...0.2.5)</small>
