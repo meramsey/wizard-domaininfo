@@ -53,7 +53,7 @@ safety = "^1.10.3"
 pre-commit = "^2.10.1"
 
 # tasks
-duty = "^0.6.0"
+duty = "^0.7.0"
 git-changelog = "^0.4.2"
 httpx = "^0.16.1"
 jinja2-cli = "^0.7.0"
