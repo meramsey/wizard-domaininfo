@@ -55,7 +55,7 @@ pre-commit = "^2.10.1"
 # tasks
 duty = "^0.7.0"
 git-changelog = "^0.5.0"
-httpx = "^0.16.1"
+httpx = "^0.22.0"
 jinja2-cli = "^0.7.0"
 toml = "^0.10.2"
 
