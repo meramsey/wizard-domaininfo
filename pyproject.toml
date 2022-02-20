@@ -78,7 +78,7 @@ wps-light = "^0.15.2"
 mkdocs = "^1.1.2"
 mkdocs-coverage = "^0.2.1"
 mkdocs-macros-plugin = "^0.5.0"
-mkdocs-material = "^6.2.7"
+mkdocs-material = "^8.0.0"
 mkdocstrings = "^0.15.0"
 
 #build
