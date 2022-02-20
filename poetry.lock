@@ -1416,7 +1416,7 @@ ipwhois = ["ipwhois"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.6.1"
-content-hash = "84c1343117427339460135f830f4e4e98c347138775bb1a8f5f5897c79715e74"
+content-hash = "77495a5d2e307ab8a21123bf34a5fa72299a3237c02e1f2c4e73fc4de5ff666b"
 
 [metadata.files]
 aiodns = [
