@@ -56,7 +56,7 @@ pre-commit = "^2.10.1"
 duty = "^0.7.0"
 git-changelog = "^0.5.0"
 httpx = "^0.22.0"
-jinja2-cli = "^0.7.0"
+jinja2-cli = "^0.8.0"
 toml = "^0.10.2"
 
 # flake8 plugins
