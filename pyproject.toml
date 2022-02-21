@@ -82,7 +82,7 @@ mkdocs-material = "^6.2.7"
 mkdocstrings = "^0.15.0"
 
 #build
-setuptools = "^54.1.0"
+setuptools = "^60.0.0"
 wheel = "^0.37.0"
 tomlkit = "^0.7.0"
 
