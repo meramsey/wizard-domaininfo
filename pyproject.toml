@@ -70,7 +70,7 @@ flake8-docstrings = "^1.5.0"
 flake8-pytest-style = "^1.3.0"
 flake8-string-format = "^0.3.0"
 flake8-tidy-imports = "^4.2.1"
-flake8-variables-names = "^0.0.4"
+flake8-variables-names = "^0.0.5"
 pep8-naming = "^0.11.1"
 wps-light = "^0.15.2"
 
