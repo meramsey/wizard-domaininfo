@@ -84,7 +84,7 @@ mkdocstrings = "^0.15.0"
 #build
 setuptools = "^54.1.0"
 wheel = "^0.37.0"
-tomlkit = "^0.10.0"
+tomlkit = "^0.11.0"
 
 [tool.poetry.scripts]
 wizard-domaininfo = "wizard_domaininfo.cli:main"
